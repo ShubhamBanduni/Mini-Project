@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+nav {
+  background-color: #f4f1bb;
+  height: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* border: solid 1px black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  #buttons {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 1px black; */
+
+    a {
+      margin-right: 15px;
+      margin-left: 15px;
+      color: #010101;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: #f4f1bb solid 2px;
+    }
+    a:hover {
+      border-bottom: red solid 2px;
+      transition-duration: 1s;
+    }
+
+    .dropbtn {
+      color: red;
+      padding: 8px;
+      font-size: 22px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      padding: 10px 0;
+      background-color: #f9f9f9;
+      /* min-width: 160px; */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 8px 2px;
+      margin-top: 5px;
+      font-size: 18px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #e0d2d2;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+  }
+
+  #contact {
+    background-color: #bbbfe4;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px;
+
+    a {
+      text-decoration: none;
+      color: #010101;
+    }
+  }
+}
+
+#one {
+  background-color: whitesmoke;
+  margin-top: 82px;
+  display: flex;
+  font-family: "Lato", sans-serif;
+
+  #text {
+    padding: 20px;
+    padding-left: 30px;
+    height: 350px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    h1 {
+      position: relative;
+      top: 10px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    p {
+      position: relative;
+      top: 40px;
+      font-size: 22px;
+    }
+
+    #tour {
+      position: relative;
+      top: 80px;
+
+      a {
+        padding: 12px;
+        background-color: #bbbfe4;
+        color: black;
+        border-radius: 20px;
+        font-size: 18px;
+        text-decoration: none;
+      }
+    }
+
+    /* border: 1px solid black;  */
+  }
+
+  #img {
+    width: 60vw;
+    background-image: url("/Pic/building.jpg");
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid black;
+    border-right: none;
+  }
+}
+
+#two {
+  height: 80vh;
+  margin-top: 82px;
+  padding-top: 20px;
+  font-family: "Lato", sans-serif;
+  /* background-color: #959799; */
+  background-color: #add8e6;
+
+  h1 {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  #AU {
+    margin-top: 50px;
+    display: flex;
+    #text {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      width: 50vw;
+      font-size: 22px;
+      line-height: 30px;
+      text-align: justify;
+    }
+    #vid {
+      padding-bottom: 20px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      width: 50vw;
+    }
+  }
+}
+.wrapper {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #010101;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+
+.card {
+  width: 80px;
+  height: 70vh;
+  border-radius: 0.75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card > .row {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.card > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.description p {
+  color: #b0b0ba;
+  padding-top: 5px;
+}
+
+.description h4 {
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 20px;
+}
+
+input {
+  display: none;
+}
+/* image content card mei fit kiya hai! */
+input:checked + label {
+  width: 850px;
+}
+
+input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card[for="c5"] {
+  background-image: url("/Pic/cscard.jpg");
+}
+.card[for="c4"] {
+  background-image: url("/Pic/aimlcard.jpg");
+}
+.card[for="c2"] {
+  background-image: url("/Pic/Data\ Collection\ &\ Analysis\ Educational\ Presentation\ in\ Pink\ and\ Blue\ Lined\ Style.png");
+}
+.card[for="c3"] {
+  background-image: url("/Pic/Technology\ in\ Education\ Technology\ Presentation\ in\ Blue\ Peach\ Illustrative\ Style.png");
+}
+.card[for="c1"] {
+  background-image: url("/Pic/civil\ card.jpg");
+}
+.card:hover{
+  cursor: default;
+}
+
+#three {
+  width: auto;
+}
+#tow {
+  height: 11vh;
+  background-color: #010101;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  padding: 2rem 0;
+  color: whitesmoke;
+  text-shadow: -3px -3px 3px rgb(121, 119, 119);
+}
+
+footer{
+  background-color: #053225;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}

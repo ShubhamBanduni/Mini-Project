@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="nav">
+      <div id="logo">
+        <a href="/index.html">
+          <img src="/Pic/Web-Logo.png" alt="LOGO" height="30px" />
+        </a>
+      </div>
+      <div id="buttons">
+        <a href="/index.html">Home</a>
+        <a href="/index.html#two">About Us</a>
+        <div class="dropdown">
+          <a href="vt.html" class="dropbtn">Virtual Tour</a>
+          <div class="dropdown-content">
+            <a href="/vt.html#gf">Ground Floor</a>
+            <a href="vt.html#ff">First Floor</a>
+            <a href="vt.html#sf">Second Floor</a>
+            <a href="vt.html#tf">Third Floor</a>
+          </div>
+        </div>
+        <a href="/index.html#three">Courses</a>
+      </div>
+      <div id="contact">
+        <a href="/contact.html">Enquiry</a>
+      </div>
+    </nav>
+
+    <section>
+      <div id="left">
+        <h1>Feedback Form</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input
+            type="hidden"
+            name="access_key"
+            value="ef0f8419-df18-4c09-90b5-ffd950fa7881"
+          />
+          <label>
+            <input for="First Name" id="First Name" required type="text" name="First Name" placeholder="First Name" />
+            <input for="Last Name" id="Last Name" required type="text" name="Last Name" placeholder="Last Name" />
+            <button id="ver" onclick="return validateAlpha()">Verify</button>
+          </label>
+          <label>
+            <input
+              required 
+              for="email"
+              id="email"
+              type="email" 
+              name="email" 
+              placeholder="E-mail Id" />
+            <input 
+              required
+              for="Phone"
+              id="Phone"
+              pattern="\d{10}"
+              type="number"
+              name="Phone Number"
+              placeholder="Phone Number (10 digit)"/>
+              <button id="ver" onclick="return validateForm()">Verify</button>
+          </label>
+          <!-- <label>
+            <button id="ver" onclick="return validateForm()" onclick="return validateAlpha()">Verify</button>
+          </label> -->
+          <label id="msg">
+            <textarea
+              placeholder="Leave us a message"
+              name="Message"
+              rows="7"
+              cols="50"
+            ></textarea>
+          </label>
+          <button id="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+       // JavaScript code for email validation
+       function validateEmail(email) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // JavaScript code for phone number validation
+        function validatePhoneNumber(phoneNumber) {
+            var regex = /^\d{10}$/;
+            return regex.test(phoneNumber);
+        }
+
+        // Function to handle form submission
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("Phone").value;
+            var isEmailValid = validateEmail(email);
+            var isPhoneValid = validatePhoneNumber(phoneNumber);
+            
+            if (isEmailValid && isPhoneValid) {
+                alert("Email and phone number are valid!");
+            } else {
+                if (!isEmailValid) {
+                    alert("Please enter a valid email address.");
+                }
+                if (!isPhoneValid) {
+                    alert("Please enter a valid 10-digit phone number.");
+                }
+            }
+            // Prevent form submission
+            return false;
+        }
+
+        // JavaScript code for alphabet validation
+        function validateAlphabet(input) {
+            var regex = /^[A-Za-z]+$/;
+            return regex.test(input);
+        }
+
+        // Function to handle form submission
+        function validateAlpha() {
+            var firstName = document.getElementById("First Name").value;
+            var lastName = document.getElementById("Last Name").value;
+            var isFirstNameValid = validateAlphabet(firstName);
+            var isLastNameValid = validateAlphabet(lastName);
+            
+            if (isFirstNameValid && isLastNameValid) {
+                alert("First name and last name are valid!");
+            } else {
+                if (!isFirstNameValid) {
+                    alert("Please enter only alphabets for first name.");
+                }
+                if (!isLastNameValid) {
+                    alert("Please enter only alphabets for last name.");
+                }
+            }
+            // Prevent form submission
+            return false;
+          }
+    </script>
+
+  </body>
+
+</html>
